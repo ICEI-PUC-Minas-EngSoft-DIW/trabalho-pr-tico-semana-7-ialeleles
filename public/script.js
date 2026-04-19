@@ -16,3 +16,13 @@ if (despesas < 1) {
 } if (despesas > 5) {
     despesas = 5;
 }
+
+let total = 0;
+
+for (let i = 1; i <= despesas; i++) {
+    let valor = Number(prompt("Digite o valor da despesa " + i + ":"));
+    while (isNaN(valor) || valor < 0) {
+        valor = Number(prompt("Valor inválido. Digite novamente a despesa " + i + ":"));
+    }
+    total = total + valor;
+}
