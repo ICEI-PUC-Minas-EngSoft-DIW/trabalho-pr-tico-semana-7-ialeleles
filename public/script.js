@@ -26,3 +26,31 @@ for (let i = 1; i <= despesas; i++) {
     }
     total = total + valor;
 }
+
+let sobra = renda - total;
+let mensagem = "";
+if (total > renda) {
+    mensagem = "⚠️ Atenção: você gastou mais do que ganhou.";
+} else {
+    if (sobra >= (0.3 * renda)) {
+        mensagem = "✅ Ótimo: boa margem de sobra.";
+    } else {
+        mensagem = "🙂 Ok: dá para melhorar a sobra."
+    }
+}
+
+console.log(" RESULTADO");
+console.log("Nome:", nome);
+console.log("Renda:", renda.toFixed(2));
+console.log("Total de despesas:", total.toFixed(2));
+console.log("Sobra:", sobra.toFixed(2));
+console.log(mensagem);
+
+alert(
+    " RESULTADO" +
+    "\nNome: " + nome +
+    "\nRenda: " + renda.toFixed(2) +
+    "\nTotal de despesas: " + total.toFixed(2) +
+    "\nSobra: " + sobra.toFixed(2) +
+    "\n" + mensagem
+);
